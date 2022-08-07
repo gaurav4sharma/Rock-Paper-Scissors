@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            href="./images/favicon-32x32.png"
+            type="image/x-icon"
+        />
+        <title>Rock, Paper, Scissors</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="./app.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>
+                    <span>Rock</span>
+                    <span>Paper</span>
+                    <span>Scissors</span>
+                </h1>
+                <div class="score-container">
+                    <h4>Score</h4>
+                    <p id="score">0</p>
+                </div>
+            </header>
+
+            <main id="main">
+                <button class="btn-circle btn-paper pick" data-choice="paper">
+                    <span class="wrapper">
+                        <img src="./images/icon-paper.svg" alt="paper" />
+                    </span>
+                </button>
+                <button
+                    class="btn-circle btn-scissors pick"
+                    data-choice="scissors"
+                >
+                    <span class="wrapper">
+                        <img src="./images/icon-scissors.svg" alt="scissors" />
+                    </span>
+                </button>
+                <button class="btn-circle btn-rock pick" data-choice="rock">
+                    <span class="wrapper">
+                        <img src="./images/icon-rock.svg" alt="rock" />
+                    </span>
+                </button>
+            </main>
+
+            <div class="rules-modal" id="modal">
+                <h2>Rules</h2>
+                <img src="./images/image-rules.svg" alt="rules" />
+                <button id="close-modal">
+                    <img src="./images/icon-close.svg" alt="rules-close" />
+                </button>
+            </div>
+
+            <button class="btn-rules" id="open-modal">Rules</button>
+        </div>
+
+        <div class="selection" id="selection">
+            <div>
+                <h2>You Picked</h2>
+                <button class="btn-circle btn-paper" id="user-select">
+                    <span class="wrapper">
+                        <img src="./images/icon-paper.svg" alt="paper" />
+                    </span>
+                </button>
+            </div>
+
+            <div>
+                <h1>You <span id="result"></span></h1>
+                <button class="btn-result" id="btn-result">Play Again</button>
+            </div>
+
+            <div>
+                <h2>The House Picked</h2>
+                <button class="btn-circle btn-paper" id="ai-select">
+                    <span class="wrapper">
+                        <img src="./images/icon-paper.svg" alt="paper" />
+                    </span>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

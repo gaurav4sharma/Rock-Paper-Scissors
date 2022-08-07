@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background: radial-gradient(
+        circle at 50% 10%,
+        hsl(214, 47%, 23%),
+        hsl(237, 49%, 15%)
+    );
+    height: 100vh;
+    color: white;
+    overflow-y: hidden;
+}
+
+.container {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+header {
+    align-items: center;
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 50px 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+h4 {
+    color: hsl(229, 64%, 46%);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+header p {
+    color: hsl(229, 25%, 31%);
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.score-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        "paper scissors"
+        "rock rock";
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+
+main::after {
+    background-image: url("./images/bg-triangle.svg");
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    height: 80%;
+    width: 80%;
+    z-index: -1;
+}
+
+.btn-circle {
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    height: 150px;
+    width: 150px;
+    box-shadow: inset 0 -6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+button:focus {
+    outline: none;
+}
+
+.btn-circle:active {
+    transform: scale(0.9);
+}
+
+.btn-circle .wrapper {
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: inset 0 6px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+}
+
+.btn-paper {
+    grid-area: paper;
+    background: linear-gradient(
+        to bottom,
+        hsl(230, 89%, 62%),
+        hsl(230, 89%, 65%)
+    );
+}
+.btn-scissors {
+    grid-area: scissors;
+    background: linear-gradient(
+        to bottom,
+        hsl(39, 89%, 49%),
+        hsl(40, 84%, 53%)
+    );
+}
+.btn-rock {
+    grid-area: rock;
+    background: linear-gradient(
+        to bottom,
+        hsl(349, 71%, 52%),
+        hsl(349, 70%, 56%)
+    );
+    grid-column: 1 / span 2;
+}
+
+.rules-modal {
+    background-color: #f0f0f0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+}
+
+.rules-modal img[alt="rules"] {
+    margin-top: 60px;
+}
+
+.rules-modal button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 40px;
+    transform: scale(1.5) translateY(-110px);
+}
+
+.rules-modal h2 {
+    color: hsl(229, 25%, 31%);
+    margin-right: 40px;
+    transform: scale(1.5) translateY(-110px);
+}
+
+.selection {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.selection h1 {
+    font-size: 2.5rem;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.selection .btn-circle {
+    margin: 40px;
+    transform: scale(1.2);
+}
+
+.btn-result {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: hsl(229, 25%, 31%);
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+}
+
+.btn-rules {
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 10px 25px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    text-transform: uppercase;
+}
